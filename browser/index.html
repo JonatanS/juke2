@@ -9,6 +9,9 @@
   <script src="/js/module.js" defer></script>
   <script src="/js/controllers/album.js" defer></script>
   <script src="/js/controllers/player.js" defer></script>
+  <script src='/js/factories/stats.js' defer></script>
+  <script src='/js/factories/player.js' defer></script>
+  <script src='/js/filters/index.js' defer></script>
 </head>
 <body ng-app="juke">
 	<div id="main" class="container-fluid">
@@ -28,6 +31,7 @@
       <div class="album" ng-controller="AlbumCtrl">
           <p>
               <h3>{{ album.name }}</h3>
+              <h4>{{fullDuration | secondsToDateTime | date:'HH:mm:ss'}}</h4>
               <img ng-src="{{ album.imageUrl }}" class="img-thumbnail">
           </p>
           <table class='table'>
